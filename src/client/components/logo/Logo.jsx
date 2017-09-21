@@ -4,7 +4,7 @@ import css from './Logo.css';
 export class Logo extends React.Component {
     render() {
         return (
-            <a href="#">netflixroulette</a>
+            <a href="#" className={css.netflix}>netflixroulette</a>
         )
     }
 }

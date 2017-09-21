@@ -1,9 +1,10 @@
 import React from 'react';
+import css from './InfoBlock.css';
 
 export class InfoBlock extends React.Component {
     render() {
         return (
-            <div>
+            <div className={css.info}>
                 <ResultCount/>
                 <ResultFilter/>
             </div>
@@ -14,7 +15,7 @@ export class InfoBlock extends React.Component {
 export class ResultCount extends React.Component {
     render() {
         return (
-            <p>7 movie found</p>
+            <p className={css.result}>7 movie found</p>
         )
     }
 }
@@ -22,7 +23,7 @@ export class ResultCount extends React.Component {
 export class ResultFilter extends React.Component {
     render() {
         return (
-            <div>
+            <div className={css.filter}>
                 <p>Sort by</p>
                 <a>release date</a>
                 <a>rating</a>
