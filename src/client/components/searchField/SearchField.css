@@ -1,0 +1,10 @@
+.title {
+    font-size: 18px;
+    color: #FFFFFF;
+    text-transform: uppercase;
+}
+
+.search {
+    width: 100%;
+    height: 35px;
+}
