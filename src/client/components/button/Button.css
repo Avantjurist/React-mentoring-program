@@ -1,5 +1,11 @@
 .button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 20px;
+    width: 80px;
+
     color: #FFF;
 
-    background-color: #b1a8a8;
+    background-color: #23160d;
 }

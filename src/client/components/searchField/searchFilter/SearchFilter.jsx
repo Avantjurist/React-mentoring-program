@@ -6,9 +6,12 @@ export class SearchFilter extends React.Component {
     render() {
         return (
             <div className={css.filter}>
-                <p>Search by</p>
-                <Button title="title"/>
-                <Button title="direction"/>
+                <div className={css.searchby}>
+                    <p>Search by</p>
+                    <Button title="title"/>
+                    <Button title="direction"/>
+                </div>
+                <Button className={css.button} style={{width: 120, height: 30, backgroundColor: '#f55263'}} title="Search"/>
             </div>
         )
     }
