@@ -1,18 +1,17 @@
 import React from 'react';
 import css from './client.css';
-import { Header } from './components/Header';
-import { Content } from './components/Content';
-import { Footer }  from './components/Footer';
+import Header from './components/header/Header';
+import Content from './components/content/Content';
+import Footer from './components/footer/Footer';
 
-export class Client extends React.Component {
-    render() {
-        return (
-            <div className={css.wrapper}>
-                <Header/>
-                <Content/>
-                <Footer/>
-            </div>
-        );
-    }
+const Client = () => {
+    return (
+        <div className={css.wrapper}>
+            <Header/>
+            <Content/>
+            <Footer/>
+        </div>
+    )
 }
 
+export { Client };

@@ -14,7 +14,9 @@ export class SearchField extends React.Component {
         return (
             <div>
                 <div className={css.title}>Find your movie</div>
-                <input className={css.search} type="text" value="Quentin Tarantino" onChange={this.changeState}/>
+                <form action="">
+                    <input className={css.search} type="text" value="Quentin Tarantino" onChange={this.changeState}/>
+                </form>
                 <SearchFilter/>
             </div>
 
