@@ -1,5 +1,5 @@
 import React from 'react';
-import { Film } from './filmItem/FilmItem';
+import Film from './filmItem/FilmItem';
 import css from './FilmList.css';
 
 export class ItemContainer extends React.Component {

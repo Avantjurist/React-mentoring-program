@@ -1,23 +1,33 @@
 import React from 'react';
-import { Button } from '../button/Button';
 import { SearchFilter } from './searchFilter/SearchFilter';
 import css from './SearchField.css'
 
 export class SearchField extends React.Component {
 
-    changeState = (e) => {
+    constructor(props) {
+        super(props);
+        this.state = {value: ''};
+    }
+
+    handleChange = (event) => {
         this.setState({
-            value: e.target.value
+            value: event.target.value
         })
     }
+
+    handleSubmit = (event) => {
+        console.log("value: " + this.state.value);
+        event.preventDefault();
+    }
+
     render() {
         return (
             <div>
                 <div className={css.title}>Find your movie</div>
-                <form action="">
-                    <input className={css.search} type="text" value="Quentin Tarantino" onChange={this.changeState}/>
+                <form onSubmit={this.handleSubmit}>
+                    <input className={css.search} type="text" value={this.state.value} onChange={this.handleChange}/>
+                    <SearchFilter/>
                 </form>
-                <SearchFilter/>
             </div>
 
         )

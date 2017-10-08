@@ -1,6 +1,11 @@
 import React from 'react';
-import { Client } from './client/Client';
 
-const App = () => <Client/>
-
-export default App
+export default class App extends React.Component {
+    render() {
+        return (
+            <div>
+                {this.props.children}
+            </div>
+        );
+    }
+}

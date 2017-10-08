@@ -12,4 +12,4 @@ const Film = ({film}) => {
     )
 }
 
-export { Film };
+export default Film;
