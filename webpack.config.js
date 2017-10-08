@@ -24,16 +24,20 @@ module.exports = {
                 loader: "babel-loader"
             }, {
                 test:/\.css$/,
-                use: ["style-loader",{loader:"css-loader", options: {modules: true}}]
+                use: ["style-loader",{loader:"css-loader", options: {modules: true, camelCase: true}}]
             }
         ]
     },
 
     devServer: {
+        historyApiFallback: true,
         proxy: {
-            '/': {
+            '/api': {
                 target: 'http://localhost:3000',
-                secure: false
+                secure: false,
+                pathRewrite: {
+                    '^/api': ''
+                }
             }
         },
         port: 3002
