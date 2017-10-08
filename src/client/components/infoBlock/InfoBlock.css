@@ -7,16 +7,3 @@
 
     background-color: #f5f5f5;
 }
-
-.result {
-
-}
-
-.filter {
-    display: flex;
-    align-items: center;
-}
-
-.filter > * {
-    margin: 0 10px;
-}

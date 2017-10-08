@@ -1,11 +1,6 @@
 import React from 'react';
 import { Client } from './client/Client';
 
-export default class App extends React.Component {
+const App = () => <Client/>
 
-    render() {
-        return (
-            <Client />
-        );
-    }
-}
+export default App

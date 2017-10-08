@@ -1,9 +1,4 @@
-import React from 'react';
-import { ItemContainer } from './filmContainer/FilmContainer';
-import { InfoBlock } from './infoBlock/InfoBlock';
-import css from './Content.css';
-
-var FILMS  = [
+const FILMS  = [
     {
         unit: 84,
         show_id: 60032563,
@@ -118,13 +113,4 @@ var FILMS  = [
     }
 ];
 
-export class Content extends React.Component {
-    render() {
-        return (
-            <div>
-                <InfoBlock/>
-                <ItemContainer films={FILMS}/>
-            </div>
-        )
-    }
-}
+export default FILMS;
