@@ -1,7 +1,7 @@
 import React from 'react';
 import { ItemContainer } from '../filmList/FilmList';
 import InfoBlock from '../infoBlock/InfoBlock';
-import css from './Content.css';
+// import css from './Content.css';
 import FILMS from '../../../data/Data';
 
 const Content = () => {

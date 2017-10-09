@@ -10,9 +10,10 @@ ReactDom.render((
     <Router>
         <App>
             <Switch>
-                <Route path="/" component={ Client }>
+                <Route path="/film/:param" component={FilmPage} />
+                <Route path="/">
                     <Client>
-                        <Route path="/search" component={ Content } />
+                        <Route path="/search/:query" component={ Content } />
                     </Client>
                 </Route>
             </Switch>
