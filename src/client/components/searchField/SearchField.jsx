@@ -1,12 +1,15 @@
 import React from 'react';
+import { withRouter } from 'react-router-dom';
 import { SearchFilter } from './searchFilter/SearchFilter';
 import css from './SearchField.css'
 
-export class SearchField extends React.Component {
+class SearchField extends React.Component {
 
     constructor(props) {
         super(props);
-        this.state = {value: ''};
+        this.state = {
+            value: ''
+        };
     }
 
     handleChange = (event) => {
@@ -15,8 +18,12 @@ export class SearchField extends React.Component {
         })
     }
 
+
+
     handleSubmit = (event) => {
-        console.log("value: " + this.state.value);
+        // const { history } = this.props
+        this.props.history.push(`/search/${this.state.value}`);
+        // console.log("value: ", this.props, this.state);
         event.preventDefault();
     }
 
@@ -33,3 +40,5 @@ export class SearchField extends React.Component {
         )
     }
 }
+
+export default withRouter(SearchField);
