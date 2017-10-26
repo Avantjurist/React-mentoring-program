@@ -21,9 +21,8 @@ class SearchField extends React.Component {
 
 
     handleSubmit = (event) => {
-        // const { history } = this.props
-        this.props.history.push(`/search/${this.state.value}`);
-        // console.log("value: ", this.props, this.state);
+        const { history : myHistory } = this.props
+        myHistory.push(`/search/${this.state.value}`);
         event.preventDefault();
     }
 
