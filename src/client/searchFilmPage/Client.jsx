@@ -9,7 +9,7 @@ export class Client extends React.Component {
             <div className={css.wrapper}>
                 <Header/>
                 {this.props.children}
-                <Footer/>
+                <Footer className={css.header}/>
             </div>
         )
     }
