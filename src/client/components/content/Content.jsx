@@ -6,17 +6,17 @@ import { connect } from 'react-redux';
 import FILMS from '../../../data/Data';
 
 const mapStateToProps = (state) => {
-    console.log("state", state)
     return {
-        films: state.films
+        films: state
     };
 };
 
-const Content = () => {
+const Content = (props) => {
+    console.log("props", props);
     return (
         <div>
             <InfoBlock/>
-            <ItemContainer films={this.props}/>
+            <ItemContainer films={props.films}/>
         </div>
     )
 }
