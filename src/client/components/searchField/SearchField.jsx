@@ -1,7 +1,23 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
-import { SearchFilter } from './searchFilter/SearchFilter';
-import css from './SearchField.css'
+import SearchFilter from './searchFilter/SearchFilter';
+import css from './SearchField.css';
+import { connect } from 'react-redux';
+import { loadFilm } from '../../../actions/index'
+
+const mapStateToProps = (state) => {
+    console.log("aaa",state)
+    return {
+        films: state
+    }
+}
+
+const mapDispatchToProps = (dispatch) => {
+    console.log("bbb", dispatch)
+    return {
+        loadFilm: (query) => dispatch(loadFilm(query))
+    }
+}
 
 class SearchField extends React.Component {
 
@@ -21,6 +37,7 @@ class SearchField extends React.Component {
 
 
     handleSubmit = (event) => {
+        this.props.loadFilm(this.state.value);
         const { history : myHistory } = this.props
         myHistory.push(`/search/${this.state.value}`);
         event.preventDefault();
@@ -40,4 +57,4 @@ class SearchField extends React.Component {
     }
 }
 
-export default withRouter(SearchField);
+export default withRouter(connect(mapStateToProps,mapDispatchToProps)(SearchField));
