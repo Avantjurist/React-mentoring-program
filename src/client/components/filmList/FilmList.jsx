@@ -8,8 +8,10 @@ export class ItemContainer extends React.Component {
         console.log(this.props)
         return (
             <ul className={css.container}>
-                {this.props.films.map(function(item) {
-                    return <Film key={item.show_id} film={item}/>
+                {
+                    this.props.films &&
+                    this.props.films.map(function(item) {
+                    return <Film key={item.id} film={item}/>
                 })}
             </ul>
         )
