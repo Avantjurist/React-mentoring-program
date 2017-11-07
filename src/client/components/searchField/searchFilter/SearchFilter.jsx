@@ -1,8 +1,9 @@
 import React from 'react';
 import { Button } from '../../button/Button';
 import css from './SearchFilter.css';
+import { connect } from 'react-redux';
 
-export class SearchFilter extends React.Component {
+class SearchFilter extends React.Component {
     render() {
         return (
             <div className={css.filter}>
@@ -16,3 +17,5 @@ export class SearchFilter extends React.Component {
         )
     }
 }
+
+export default SearchFilter

@@ -6,6 +6,7 @@ import App from './App';
 import { FilmPage } from './client/filmPage/FilmPage';
 import { Client } from './client/searchFilmPage/Client';
 import Content from './client/components/content/Content';
+import css from './index.css';
 import store from './store';
 
 ReactDom.render((

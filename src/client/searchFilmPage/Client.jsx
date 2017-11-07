@@ -1,5 +1,5 @@
 import React from 'react';
-import css from './client.css';
+import css from './Client.css';
 import Header from '../components/header/Header';
 import Footer from '../components/footer/Footer';
 
@@ -7,9 +7,11 @@ export class Client extends React.Component {
     render() {
         return (
             <div className={css.wrapper}>
-                <Header/>
-                {this.props.children}
-                <Footer className={css.header}/>
+                <div className="content">
+                    <Header/>
+                    {this.props.children}
+                </div>
+                <Footer/>
             </div>
         )
     }
