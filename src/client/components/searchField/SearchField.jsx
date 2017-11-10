@@ -4,7 +4,7 @@ import SearchFilter from './searchFilter/SearchFilter';
 import css from './SearchField.css';
 import {bindActionCreators} from 'redux';
 import { connect } from 'react-redux';
-import { loadFilm, setCockSize } from '../../../actions/index'
+import { loadFilm, searchBy } from '../../../actions/index'
 
 class SearchField extends React.Component {
 
@@ -36,7 +36,7 @@ class SearchField extends React.Component {
                 <div className={css.title}>Find your movie</div>
                 <form onSubmit={this.handleSubmit}>
                     <input className={css.search} type="text" value={this.state.value} onChange={this.handleChange}/>
-                    <SearchFilter setCockSize={this.props.setCockSize}/>
+                    <SearchFilter searchBy={this.props.searchBy}/>
                 </form>
             </div>
 
@@ -44,4 +44,4 @@ class SearchField extends React.Component {
     }
 }
 
-export default withRouter(connect(null,dispatch => bindActionCreators({loadFilm, setCockSize}, dispatch))(SearchField));
+export default withRouter(connect(null,dispatch => bindActionCreators({loadFilm, searchBy}, dispatch))(SearchField));

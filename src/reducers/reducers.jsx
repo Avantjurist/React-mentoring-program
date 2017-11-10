@@ -1,5 +1,5 @@
 import {
-    COCK_SIZE,
+    SEARCH_BY,
     RESET_FILM,
     SET_FILMS
 }
@@ -18,7 +18,7 @@ const filmReducer = (state=defaultState, action) => {
               films: action.films
             };
 
-        case COCK_SIZE:
+        case SEARCH_BY:
             return {
                 ...state,
                 sort: action.payload
