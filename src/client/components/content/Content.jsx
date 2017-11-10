@@ -7,7 +7,7 @@ import FILMS from '../../../data/Data';
 
 const mapStateToProps = (state) => {
     return {
-        films: state
+        films: state.films
     };
 };
 

@@ -1,18 +1,33 @@
 import {
-    GET_FILMS_BY_TITLE,
-    GET_FILM_BY_DIRECTOR,
-    RESET_FILM
+    COCK_SIZE,
+    RESET_FILM,
+    SET_FILMS
 }
 from '../actions/index'
 
-const filmReducer = (state=[], action) => {
+const defaultState = {
+  films: [],
+  sort: 'title'
+};
+
+const filmReducer = (state=defaultState, action) => {
     switch (action.type) {
-        case GET_FILMS_BY_TITLE:
-            return action.films;
-        case GET_FILM_BY_DIRECTOR:
-            return action.films;
+        case SET_FILMS:
+            return {
+              ...state,
+              films: action.films
+            };
+
+        case COCK_SIZE:
+            return {
+                ...state,
+                sort: action.payload
+            };
         case RESET_FILM:
-            return [];
+            return {
+              ...state,
+              films: []
+            };
         default:
             return state
     }
