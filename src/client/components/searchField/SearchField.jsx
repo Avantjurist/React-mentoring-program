@@ -2,22 +2,9 @@ import React from 'react';
 import { withRouter } from 'react-router-dom';
 import SearchFilter from './searchFilter/SearchFilter';
 import css from './SearchField.css';
+import {bindActionCreators} from 'redux';
 import { connect } from 'react-redux';
-import { loadFilm } from '../../../actions/index'
-
-const mapStateToProps = (state) => {
-    console.log("aaa",state)
-    return {
-        films: state
-    }
-}
-
-const mapDispatchToProps = (dispatch) => {
-    console.log("bbb", dispatch)
-    return {
-        loadFilm: (query) => dispatch(loadFilm(query))
-    }
-}
+import { loadFilm, setCockSize } from '../../../actions/index'
 
 class SearchField extends React.Component {
 
@@ -49,7 +36,7 @@ class SearchField extends React.Component {
                 <div className={css.title}>Find your movie</div>
                 <form onSubmit={this.handleSubmit}>
                     <input className={css.search} type="text" value={this.state.value} onChange={this.handleChange}/>
-                    <SearchFilter/>
+                    <SearchFilter setCockSize={this.props.setCockSize}/>
                 </form>
             </div>
 
@@ -57,4 +44,4 @@ class SearchField extends React.Component {
     }
 }
 
-export default withRouter(connect(mapStateToProps,mapDispatchToProps)(SearchField));
+export default withRouter(connect(null,dispatch => bindActionCreators({loadFilm, setCockSize}, dispatch))(SearchField));

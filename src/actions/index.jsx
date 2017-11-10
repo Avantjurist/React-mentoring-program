@@ -1,22 +1,33 @@
 import axios from 'axios'
 
-export const GET_FILMS_BY_TITLE = 'GET_FILMS_BY_TITLE';
-export const GET_FILM_BY_DIRECTOR = 'GET_FILM_BY_DIRECTOR';
+export const COCK_SIZE = 'GET_FILMS_BY_TITLE';
 export const RESET_FILM = 'RESET_FILM'
+export const SET_FILMS = 'SET_FILMS'
 
-export const getFilms = (query, response) => {
+export const setFilms = (response) => {
     return {
-        type: GET_FILMS_BY_TITLE,
-        query,
+        type: SET_FILMS,
         films: response.data.results
     }
 }
 
 export const loadFilm = (query) => {
-    return (dispatch) => {
-        axios.get(`http://api.themoviedb.org/3/search/movie?api_key=b692c617757975a58d6ad43a95a45853&query=${query}`)
+    return (dispatch, getState) => {
+      console.log("cock",getState())
+        axios.get(
+          (getState().sort == "direction") ?
+          `http://api.themoviedb.org/3/discover/movie?director=${query}&api_key=b692c617757975a58d6ad43a95a45853`:
+          `http://api.themoviedb.org/3/search/movie?api_key=b692c617757975a58d6ad43a95a45853&query=${query}`)
+
             .then( (response) => {
-                dispatch(getFilms(query,response));
+                dispatch(setFilms(response));
             })
     }
+}
+
+export const setCockSize = (size) => {
+    return {
+      type: COCK_SIZE,
+      payload: size
+    };
 }
