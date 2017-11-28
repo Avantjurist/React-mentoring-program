@@ -3,7 +3,7 @@ import ReactDom from 'react-dom';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { Provider } from 'react-redux'
 import App from './App';
-import { FilmPage } from './client/filmPage/FilmPage';
+import FilmPage from './client/filmPage/FilmPage';
 import { Client } from './client/searchFilmPage/Client';
 import Content from './client/components/content/Content';
 import css from './index.css';
@@ -14,7 +14,7 @@ ReactDom.render((
         <Router>
             <App>
                 <Switch>
-                    <Route path="/film/:param" component={FilmPage} />
+                    <Route path="/film/:param" component={ FilmPage } />
                     <Route path="/">
                         <Client>
                             <Route path="/search/:query" component={ Content } />
