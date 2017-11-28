@@ -1,8 +1,9 @@
 import axios from 'axios'
 
 export const SEARCH_BY = 'GET_FILMS_BY_TITLE';
-export const RESET_FILM = 'RESET_FILM'
-export const SET_FILMS = 'SET_FILMS'
+export const RESET_FILM = 'RESET_FILM';
+export const SET_FILMS = 'SET_FILMS';
+export const FILTER_BY = 'FILTER_FILMS_BY'
 
 export const setFilms = (response) => {
     return {
@@ -28,5 +29,12 @@ export const searchBy = (query) => {
     return {
       type: SEARCH_BY,
       payload: query
+    };
+}
+
+export const filterBy = (query) => {
+    return {
+        type: FILTER_BY,
+        payload: query
     };
 }
