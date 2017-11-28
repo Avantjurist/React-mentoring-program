@@ -3,10 +3,11 @@ import ResultCount from './components/resultCount/ResultCount';
 import ResultFilter  from './components/resultFilter/ResultFilter';
 import css from './InfoBlock.css';
 
-const InfoBlock = () => {
+const InfoBlock = (props) => {
+  console.log("er", props)
     return (
         <div className={css.info}>
-            <ResultCount/>
+            <ResultCount count={props.count}/>
             <ResultFilter/>
         </div>
     )
