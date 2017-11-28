@@ -1,13 +1,15 @@
 import {
     SEARCH_BY,
     RESET_FILM,
-    SET_FILMS
+    SET_FILMS,
+    FILTER_BY
 }
 from '../actions/index'
 
 const defaultState = {
   films: [],
-  sort: 'title'
+  sort: 'title',
+  filter: ''
 };
 
 const filmReducer = (state=defaultState, action) => {
@@ -23,6 +25,11 @@ const filmReducer = (state=defaultState, action) => {
                 ...state,
                 sort: action.payload
             };
+        case FILTER_BY:
+            return {
+                ...state,
+                filter: action.payload
+            }
         case RESET_FILM:
             return {
               ...state,
