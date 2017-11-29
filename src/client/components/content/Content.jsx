@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {Component} from 'react';
 import { ItemContainer } from '../filmList/FilmList';
 import InfoBlock from '../infoBlock/InfoBlock';
 import { connect } from 'react-redux';
@@ -6,13 +6,11 @@ import { connect } from 'react-redux';
 
 const mapStateToProps = (state) => {
     if(state.filter == "rating") {
-        console.log("xxx",filterFilmsByRating(state.films));
         return {
             films: filterFilmsByRating(state.films)
-        };
+        }
     }
     if(state.filter == "date") {
-        console.log("xxx",filterFilmByDate(state.films));
         return {
             films: filterFilmByDate(state.films)
         };
@@ -23,21 +21,25 @@ const mapStateToProps = (state) => {
 };
 
 const filterFilmsByRating = (films) => {
-    return films.sort((film1,film2) => film2.vote_average - film1.vote_average)
+    return films.slice().sort((film1,film2) => film2.vote_average - film1.vote_average)
 }
 
 const filterFilmByDate = (films) => {
-    return films.sort((film1,film2) => Date.parse(film2.release_date) - Date.parse(film1.release_date))
+    return films.slice().sort((film1,film2) => Date.parse(film2.release_date) - Date.parse(film1.release_date))
 }
 
-const Content = (props) => {
-    console.log("length", props.films.length);
+class Content extends Component {
+  render() {
+
+    console.log("length", this.props.films);
     return (
         <div>
-            <InfoBlock count={props.films.length}/>
-            <ItemContainer films={props.films}/>
+            <InfoBlock count={this.props.films.length}/>
+            <ItemContainer films={this.props.films}/>
         </div>
     )
+  }
+
 }
 
 export default connect(mapStateToProps)(Content);

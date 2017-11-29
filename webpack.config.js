@@ -10,6 +10,7 @@ module.exports = {
     output: {
         filename: 'bundle.js',
         path: path.resolve(__dirname, 'built'),
+        publicPath: '/'
     },
 
     resolve: {
@@ -47,6 +48,7 @@ module.exports = {
         new HtmlWebpackPlugin({
             title: 'Test',
             hash: true,
+            inject: 'body',
             template: './index.html'
         })
     ],
